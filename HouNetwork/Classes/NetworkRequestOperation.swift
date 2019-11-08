@@ -6,7 +6,7 @@ import Foundation
 import HouLogger
 
 public class NetworkRequestOperation: AsynchronousOperation {
-  typealias APIClientCompletionHandler = (Result<APIResponse<Data?>, APIError>) -> Void
+  public typealias APIClientCompletionHandler = (Result<APIResponse<Data?>, APIError>) -> Void
   public var data: Data?
   public var error: NSError?
 

@@ -10,24 +10,24 @@ public enum HTTPMethod: String {
 }
 
 public struct HTTPHeader {
-  let field: String
-  let value: String
+  public let field: String
+  public let value: String
 }
 
 public struct APIRequest {
-  var url: URL
-  let method: HTTPMethod
-  var queryItems: [URLQueryItem]?
-  var headers: [HTTPHeader]?
-  var body: Data?
+  public var url: URL
+  public let method: HTTPMethod
+  public var queryItems: [URLQueryItem]?
+  public var headers: [HTTPHeader]?
+  public var body: Data?
 
-  init(url: URL, method: HTTPMethod = .get, bodyData: Data? = nil) {
+  public init(url: URL, method: HTTPMethod = .get, bodyData: Data? = nil) {
     self.url = url
     self.method = method
     body = bodyData
   }
 
-  init<JSONObject: Encodable>(url: URL, method: HTTPMethod = .get, jsonObject: JSONObject) throws {
+  public init<JSONObject: Encodable>(url: URL, method: HTTPMethod = .get, jsonObject: JSONObject) throws {
     self.url = url
     self.method = method
     body = try JSONEncoder().encode(jsonObject)
@@ -35,8 +35,8 @@ public struct APIRequest {
 }
 
 public struct APIResponse<Body> {
-  let statusCode: Int
-  let body: Body
+  public let statusCode: Int
+  public let body: Body
 }
 
 // MARK: - For JSON Object
