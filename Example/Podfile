@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'HouNetwork_Example' do
+  pod 'HouNetwork', :path => '../'
+
+  target 'HouNetwork_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
