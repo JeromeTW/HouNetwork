@@ -1,0 +1,16 @@
+PODS:
+  - HouNetwork (0.1.0)
+
+DEPENDENCIES:
+  - HouNetwork (from `../`)
+
+EXTERNAL SOURCES:
+  HouNetwork:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HouNetwork: f2e8d7130e534a4dc0b4ffed96aa8ed3ea91fc6d
+
+PODFILE CHECKSUM: cf67e662668d147f0aacae5d72d9667166478324
+
+COCOAPODS: 1.8.4

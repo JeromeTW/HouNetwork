@@ -1,0 +1,22 @@
+{
+  "name": "HouNetwork",
+  "version": "0.1.0",
+  "summary": "A short description of HouNetwork.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/jerome.developer.tw@gmail.com/HouNetwork",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jerome.developer.tw@gmail.com": "jerome.developer.tw@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/jerome.developer.tw@gmail.com/HouNetwork.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "HouNetwork/Classes/**/*"
+}
