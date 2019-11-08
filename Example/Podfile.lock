@@ -1,15 +1,26 @@
 PODS:
-  - HouNetwork (0.1.0)
+  - DeviceGuru (6.0.0)
+  - HouLogger (1.0.2):
+    - DeviceGuru
+  - HouNetwork (0.0.1):
+    - HouLogger
 
 DEPENDENCIES:
   - HouNetwork (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - DeviceGuru
+    - HouLogger
 
 EXTERNAL SOURCES:
   HouNetwork:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HouNetwork: f2e8d7130e534a4dc0b4ffed96aa8ed3ea91fc6d
+  DeviceGuru: af478ea9bff7614d85198b7516ea7657153c65bb
+  HouLogger: d21ef78240b395ea7ec73b46b08a97cafda40cee
+  HouNetwork: f3533768c54f760c8e625e68303e14684bb33345
 
 PODFILE CHECKSUM: cf67e662668d147f0aacae5d72d9667166478324
 

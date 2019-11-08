@@ -161,9 +161,13 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/DeviceGuru/DeviceGuru.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/HouLogger/HouLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HouNetwork/HouNetwork.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/DeviceGuru/DeviceGuru.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/HouLogger/HouLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HouNetwork/HouNetwork.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
