@@ -4,17 +4,17 @@
 
 import Foundation
 
-enum HTTPMethod: String {
+public enum HTTPMethod: String {
   case get = "GET"
   case post = "POST"
 }
 
-struct HTTPHeader {
+public struct HTTPHeader {
   let field: String
   let value: String
 }
 
-struct APIRequest {
+public struct APIRequest {
   var url: URL
   let method: HTTPMethod
   var queryItems: [URLQueryItem]?
@@ -34,7 +34,7 @@ struct APIRequest {
   }
 }
 
-struct APIResponse<Body> {
+public struct APIResponse<Body> {
   let statusCode: Int
   let body: Body
 }
@@ -42,7 +42,7 @@ struct APIResponse<Body> {
 // MARK: - For JSON Object
 
 extension APIResponse where Body == Data? {
-  func decode<BodyType: Decodable>(to _: BodyType.Type) throws -> APIResponse<BodyType> {
+  public func decode<BodyType: Decodable>(to _: BodyType.Type) throws -> APIResponse<BodyType> {
     guard let data = body else {
       throw APIError.decodingFailure
     }
@@ -51,7 +51,7 @@ extension APIResponse where Body == Data? {
   }
 }
 
-enum APIError: Error {
+public enum APIError: Error {
   case invalidURL
   case requestFailed
   case decodingFailure

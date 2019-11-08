@@ -5,12 +5,12 @@
 import Foundation
 import HouLogger
 
-class NetworkRequestOperation: AsynchronousOperation {
+public class NetworkRequestOperation: AsynchronousOperation {
   typealias APIClientCompletionHandler = (Result<APIResponse<Data?>, APIError>) -> Void
-  var data: Data?
-  var error: NSError?
+  public var data: Data?
+  public var error: NSError?
 
-  var startDate: Date!
+  public var startDate: Date!
   private var task: URLSessionTask!
   private var incomingData = NSMutableData()
   private var session: URLSession = {
@@ -20,7 +20,7 @@ class NetworkRequestOperation: AsynchronousOperation {
     return URLSession(configuration: config)
   }()
 
-  init(request: APIRequest, completionHandler: @escaping APIClientCompletionHandler) {
+  public init(request: APIRequest, completionHandler: @escaping APIClientCompletionHandler) {
     super.init()
 
     var urlRequest = URLRequest(url: request.url)
@@ -47,14 +47,14 @@ class NetworkRequestOperation: AsynchronousOperation {
     }
   }
 
-  override func cancel() {
+  override public func cancel() {
     logC("task.cancel()\n")
     task.cancel()
     super.cancel()
     completeOperation()
   }
 
-  override func main() {
+  override public func main() {
     logC("task.resume()\n")
     task!.resume()
     startDate = Date()

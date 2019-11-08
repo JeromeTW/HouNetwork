@@ -21,11 +21,11 @@ import HouLogger
 ///   and ensuring `completeOperation()` is called.
 
 // 可以自己定義何時為 Operation 的完成。
-class AsynchronousOperation: Operation {
-  override var isAsynchronous: Bool { return true }
+public class AsynchronousOperation: Operation {
+  override public var isAsynchronous: Bool { return true }
 
   private var _executing: Bool = false
-  override var isExecuting: Bool {
+  override public var isExecuting: Bool {
     get {
       // 若直接返回 isExecuting 會陷入無限迴圈。
       return _executing
@@ -41,7 +41,7 @@ class AsynchronousOperation: Operation {
   }
 
   private var _finished: Bool = false
-  override var isFinished: Bool {
+  override public var isFinished: Bool {
     get {
       return _finished
     }
@@ -57,7 +57,7 @@ class AsynchronousOperation: Operation {
   /// Complete the operation
   ///
   /// This will result in the appropriate KVN of isFinished and isExecuting
-  func completeOperation() {
+  public func completeOperation() {
     logC("completeOperation")
     if isExecuting {
       isExecuting = false
@@ -65,7 +65,7 @@ class AsynchronousOperation: Operation {
     }
   }
 
-  override func start() {
+  override public func start() {
     logC("start")
     guard isCancelled == false else {
       isFinished = true
@@ -77,7 +77,7 @@ class AsynchronousOperation: Operation {
     main()
   }
 
-  override func main() {
+  override public func main() {
     logC("main")
   }
 }
